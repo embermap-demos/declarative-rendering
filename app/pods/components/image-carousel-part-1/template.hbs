@@ -1,0 +1,25 @@
+<div class='carousel-viewport' style='transform: translate(115px)'>
+
+  {{#each photos as |photo index|}}
+    {{!-- <a {{action 'selectSlide' index}} class='carousel-slide'> --}}
+    <a class='carousel-slide'>
+      <div class="carousel-image-wrapper">
+        <div style='background-image: url({{photo}})' class="carousel-image"></div>
+      </div>
+    </a>
+  {{/each}}
+
+</div>
+
+<div class="text-center">
+  <a {{action 'moveLeft'}} class='text-grey hover:text-grey-darkest text-lg mx-1 p-2 no-underline' href="#">
+    {{fa-icon 'chevron-left'}}
+  </a>
+  <a {{action 'moveRight'}} class='text-grey hover:text-grey-darkest text-lg mx-1 p-2 no-underline' href="#">
+    {{fa-icon 'chevron-right'}}
+  </a>
+</div>
+
+{{!-- <p>
+  Slide {{currentSlide}} of {{photos.length}}
+</p> --}}

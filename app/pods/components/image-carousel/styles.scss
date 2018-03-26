@@ -1,0 +1,45 @@
+.carousel {
+  @extend .w-full;
+  @extend .h-full;
+  @extend .overflow-hidden;
+  @extend .py-8;
+}
+
+.carousel-viewport {
+  @extend .flex;
+  @extend .h-full;
+  @extend .cursor-pointer;
+  @extend .transition;
+  padding: 40px 0 20px;
+}
+
+.carousel-slide {
+  @extend .h-full;
+  @extend .w-80\%;
+  @extend .max-w-90\%;
+  @extend .mx-4;
+  // @extend .inline-block;
+  @extend .block;
+  @extend .flex-no-shrink;
+  @extend .flex;
+  @extend .items-center;
+}
+
+.carousel-image-wrapper {
+  width: 100%;
+  height: 0;
+  position: relative;
+  padding-bottom: 56.25%;
+}
+
+.carousel-image {
+  position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%; z-index: 100;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // @extend .max-w-full;
+  // @extend .max-h-full;
+  // @extend .h-full;
+  // @extend .w-auto;
+  // @extend .shadow-stripe;
+}
