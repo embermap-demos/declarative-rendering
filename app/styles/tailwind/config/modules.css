@@ -28,6 +28,22 @@
  * @import "components/buttons";
  * @import "components/forms";
  */
+.outline-none {
+  outline: none;
+}
+
+.carousel-controls {
+  @apply flex items-center justify-center;
+}
+.hover\:text-grey-darkest:hover {
+  color: #3d4852;
+}
+.carousel-control {
+  @apply text-grey text-2xl mx-1 p-2 no-underline outline-none;
+}
+.carousel-control-sm {
+  @apply text-grey mx-1 p-2 no-underline outline-none;
+}
 
 /**
  * This injects all of Tailwind's utility classes, generated based on your

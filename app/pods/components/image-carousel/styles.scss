@@ -2,21 +2,21 @@
   @extend .w-full;
   @extend .h-full;
   @extend .overflow-hidden;
-  @extend .py-8;
+  // @extend .py-8;
 }
 
 .carousel-viewport {
   @extend .flex;
   @extend .h-full;
-  @extend .cursor-pointer;
+  // @extend .cursor-pointer;
   @extend .transition;
   padding: 40px 0 20px;
 }
 
 .carousel-slide {
   @extend .h-full;
-  @extend .w-80\%;
-  @extend .max-w-90\%;
+  @extend .w-60\%;
+  // @extend .max-w-90\%;
   @extend .mx-4;
   // @extend .inline-block;
   @extend .block;

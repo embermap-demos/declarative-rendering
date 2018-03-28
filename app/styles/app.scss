@@ -4,3 +4,11 @@
 .transition {
   transition: all 0.5s;
 }
+
+button:focus {
+  outline: none;
+}
+
+.hover\:text-grey-darkest:hover {
+  color: #3d4852;
+}

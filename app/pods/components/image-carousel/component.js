@@ -5,31 +5,24 @@ export default Component.extend({
 
   photos: null, // passed in
 
-  currentSlide: 1,
-
   actions: {
     moveRight() {
       let container = this.$('.carousel-viewport');
-      let current = container.css('transform').replace(/[^0-9\-.,]/g, '').split(',')[4] || 0;
-      let shifted = +current - 1056;
+      // Get the current transform percentage
+      let current = +(container.css('transform').replace(/[^0-9\-.,]/g, '').split(',')[4]) / 1280 * 100;
+      // Add the slide (width + margin)
+      let shifted = current - 62.5;
 
-      container.css('transform', `translate(${shifted}px)`);
+      container.css('transform', `translate(${shifted}%)`);
     },
 
     moveLeft() {
       let container = this.$('.carousel-viewport');
-      let current = container.css('transform').replace(/[^0-9\-.,]/g, '').split(',')[4] || 0;
-      let shifted = +current + 1056;
+      let current = +container.css('transform').replace(/[^0-9\-.,]/g, '').split(',')[4] / 1280 * 100;
+      let shifted = current + 62.5;
 
-      container.css('transform', `translate(${shifted}px)`);
+      container.css('transform', `translate(${shifted}%)`);
     }
-  },
-
-  renderCarousel() {
-    let index = this.get('index');
-    let offset = this.calculateOffset(index);
-
-    this.set('carouse-viewport', offset);
   }
 
 });
