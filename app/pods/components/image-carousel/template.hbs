@@ -15,6 +15,10 @@
     {{fa-icon 'angle-left'}}
   </button>
 
+  <span class="carousel-control-sm">
+    {{currentSlide}} / {{photos.length}}
+  </span>
+
   <button {{action 'moveRight'}} class='carousel-control'>
     {{fa-icon 'angle-right'}}
   </button>
