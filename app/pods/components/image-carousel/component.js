@@ -9,25 +9,21 @@ export default Component.extend({
 
   actions: {
     moveRight() {
-      this.incrementProperty('currentSlide');
+      if (this.get('currentSlide') < this.get('photos.length')) {
+        this.incrementProperty('currentSlide');
 
-      let container = this.$('.carousel-viewport');
-      // Get the current transform percentage
-      let current = +(container.css('transform').replace(/[^0-9\-.,]/g, '').split(',')[4]) / 1280 * 100 || 0;
-      // Add the slide (width + margin)
-      let shifted = current - 62.5;
-
-      container.css('transform', `translate(${shifted}%)`);
+        let shifted = (this.get('currentSlide') - 1) * -62.5;
+        this.$('.carousel-viewport').css('transform', `translate(${shifted}%)`);
+      }
     },
 
     moveLeft() {
-      this.decrementProperty('currentSlide');
+      if (this.get('currentSlide') > 1) {
+        this.decrementProperty('currentSlide');
 
-      let container = this.$('.carousel-viewport');
-      let current = +container.css('transform').replace(/[^0-9\-.,]/g, '').split(',')[4] / 1280 * 100 || 0;
-      let shifted = current + 62.5;
-
-      container.css('transform', `translate(${shifted}%)`);
+        let shifted = (this.get('currentSlide') - 1) * -62.5;
+        this.$('.carousel-viewport').css('transform', `translate(${shifted}%)`);
+      }
     }
   }
 
