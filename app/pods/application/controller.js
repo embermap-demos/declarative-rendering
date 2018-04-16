@@ -2,6 +2,9 @@ import Controller from '@ember/controller';
 
 export default Controller.extend({
 
+  queryParams: [ 'currentSlide' ],
+  currentSlide: 1,
+
   init() {
     this._super(...arguments);
 
